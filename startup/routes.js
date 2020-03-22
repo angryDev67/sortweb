@@ -4,13 +4,14 @@ const helmet = require("helmet");
 
 const error = require("../middleware/error");
 
+const landingRoutes = require("../routes/landing");
 const courseRoutes = require("../routes/courses");
 const userRoutes = require("../routes/user");
 const customerRoutes = require("../routes/customers");
 const authRoutes = require("../routes/auth");
 
 module.exports = function(app) {
-  app.set("view engine", "pug");
+  app.set("view engine", "ejs");
   app.set("views", "./views"); // default route for views
 
   app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,6 +20,7 @@ module.exports = function(app) {
   app.use(helmet());
 
   // routes
+  app.use("/", landingRoutes);
   app.use("/api", courseRoutes);
   app.use("/api/user", userRoutes);
   app.use("/api/auth", authRoutes);
