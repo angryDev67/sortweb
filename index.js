@@ -43,7 +43,7 @@ const logger = require("./logs/logger");
 // }
 
 const app = express();
-const PORT = 3001;
+const PORT = 80;
 
 // handle super exceptions
 // which will terminate process
@@ -73,5 +73,5 @@ require("./startup/db")();
 require("./startup/routes")(app);
 
 app.listen(PORT, () => {
-  console.log("server is running on port 3001");
+  console.log("server is running on port 80");
 });
