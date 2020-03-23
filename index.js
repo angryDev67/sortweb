@@ -43,7 +43,7 @@ const logger = require("./logs/logger");
 // }
 
 const app = express();
-const PORT = 443;
+const PORT = 3000;
 
 // handle super exceptions
 // which will terminate process
