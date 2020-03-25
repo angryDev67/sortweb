@@ -5,6 +5,9 @@ module.exports = {
       script: "./index.js",
       watch: true,
       increment_var: "PORT",
+      watch_options: {
+        followSymlinks: false
+      },
       ignore_watch: ["node_modules", "logfile.log", "./logfile.log"],
       env: {
         PORT: 80,

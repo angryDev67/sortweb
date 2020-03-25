@@ -26,6 +26,10 @@ router.post("/", async (req, res) => {
   res.json({ success: true, token, user });
 });
 
+router.get("/login", (req, res) => {
+  res.render("loginPage");
+});
+
 function validateUser(user) {
   const schema = {
     password: Joi.string()
