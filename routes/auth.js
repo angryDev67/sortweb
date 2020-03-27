@@ -23,11 +23,8 @@ router.post("/", async (req, res) => {
       .json({ success: false, message: "Invalid email or password" });
   console.log(process.env.SECRET);
   const token = user.generateAuthToken(); // secret key
-  res.json({ success: true, token, user });
-});
-
-router.get("/login", (req, res) => {
-  res.render("loginPage");
+  //res.json({ success: true, token, user });
+  res.redirect("/admin/dashboard");
 });
 
 function validateUser(user) {

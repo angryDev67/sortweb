@@ -6,4 +6,8 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
+router.get("/login", (req, res) => {
+  res.render("loginPage");
+});
+
 module.exports = router;

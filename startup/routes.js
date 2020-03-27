@@ -4,6 +4,8 @@ const helmet = require("helmet");
 
 const error = require("../middleware/error");
 
+const adminRoutes = require("../routes/admin");
+
 const landingRoutes = require("../routes/landing");
 const courseRoutes = require("../routes/courses");
 const userRoutes = require("../routes/user");
@@ -20,6 +22,8 @@ module.exports = function(app) {
   app.use(helmet());
 
   // routes
+  app.use("/admin", adminRoutes);
+
   app.use("/", landingRoutes);
   app.use("/api", courseRoutes);
   app.use("/api/user", userRoutes);
